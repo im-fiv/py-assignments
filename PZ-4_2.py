@@ -6,20 +6,23 @@
 найденное количество дней K (целое) и суммарный пробег S (вещественное число).
 """
 
-# принимаем вещественное число от ввода пользователя
-P = float(input('P = ')) / 100
+try:
+	# принимаем вещественное число от ввода пользователя
+	P = float(input('P = ')) / 100
 
-# определяем переменные
-distance_per_day = 10
-total_distance = 0
-day_count = 0
+	# определяем переменные
+	distance_per_day = 10
+	total_distance = 0
+	day_count = 0
 
-# высчитываем пробег и дни с помощью цикла
-while day_count <= 200:
-	total_distance += distance_per_day
-	day_count += 1
-	distance_per_day *= 1 + P
+	# высчитываем пробег и дни с помощью цикла
+	while day_count <= 200:
+		total_distance += distance_per_day
+		day_count += 1
+		distance_per_day *= 1 + P
 
-# выводим результат
-print(f'Дней понадобилось: {day_count}')
-print(f'Суммарный пробег: {total_distance}')
+	# выводим результат
+	print(f'Дней понадобилось: {day_count}')
+	print(f'Суммарный пробег: {total_distance}')
+except ValueError:
+	print('Значения введены неверно!')
